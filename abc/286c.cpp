@@ -79,10 +79,28 @@ template <typename T> inline bool chmax(T& a, const T& b) {bool compare = a < b;
 
 const ll MOD=1000000007;
 
+
 int main(){
-    tuple<ll,ll,ll> nv=make_tuple(5,3,6);
-    ll& x=get<0>(nv);
-    ll& y=get<1>(nv);
-    ll& z=get<2>(nv);
-    print(x);
+   ll n,a,b; cin>>n>>a>>b;
+   string s; cin>>s;
+   ll ans=-1;
+   rep(i,n){
+        ll itr=i;
+        ll ritr=i-1;
+        itr=(itr+n)%n;
+        ritr=(ritr+n)%n;
+        ll hoge=a*i;
+        ll hogehoge=0;
+        rep(j,n/2){
+            if(s[itr]!=s[ritr]) hogehoge++;
+            itr++;
+            ritr--;
+            itr=(itr+n)%n;
+            ritr=(ritr+n)%n;
+        }
+        hoge+=hogehoge*b;
+        if(ans==-1) ans=hoge;
+        else chmin(ans,hoge);
+   }
+   print(ans);
 }
