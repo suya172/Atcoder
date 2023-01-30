@@ -80,9 +80,6 @@ template <typename T> inline bool chmax(T& a, const T& b) {bool compare = a < b;
 const ll MOD=1000000007;
 
 int main(){
-    tuple<ll,ll,ll> nv=make_tuple(5,3,6);
-    ll& x=get<0>(nv);
-    ll& y=get<1>(nv);
-    ll& z=get<2>(nv);
-    print(x);
+    int n,x,y; cin>>n>>x>>y;
+    vi a(n),b(n);
 }
