@@ -80,6 +80,6 @@ template <typename T> inline bool chmax(T& a, const T& b) {bool compare = a < b;
 const ll MOD=1000000007;
 
 int main(){
-    int n,x,y; cin>>n>>x>>y;
-    vi a(n),b(n);
+    print("Hello World");
+    
 }
