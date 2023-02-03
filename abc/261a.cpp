@@ -80,5 +80,9 @@ template <typename T> inline bool chmax(T& a, const T& b) {bool compare = a < b;
 const ll MOD=1000000007;
 
 int main(){
-   
+    vi v(101);
+    int a,b,c,d; cin>>a>>b>>c>>d;
+    reps(i,a+1,b+1) v[i]++;
+    reps(i,c+1,d+1) v[i]++;
+    print(count(all(v),2));
 }

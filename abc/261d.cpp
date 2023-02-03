@@ -38,6 +38,7 @@ using uss = unordered_set<string>;
 #define rall(v) v.rbegin(),v.rend()
 #define UNIQUE(v) v.erase( unique(v.begin(), v.end()), v.end() );
 #define itn int
+#define stirng string
 
 /* REP macro */
 #define reps(i, a, n) for (ll i = (a); i < (ll)(n); ++i)
@@ -80,5 +81,19 @@ template <typename T> inline bool chmax(T& a, const T& b) {bool compare = a < b;
 const ll MOD=1000000007;
 
 int main(){
-   
+    ll N,M; cin>>N>>M;
+    vector<ll> X(5001),Y(5001);
+    for (int i = 0; i < N; i++) cin >> X[i+1];
+    rep(i,M){
+        ll c,y; cin>>c>>y;
+        Y[c]=y;
+    }
+    vvll dp(5001,vll(5001));
+    rrep(i,N){
+        dp[i][0]=*max_element(all(dp[i-1]));
+        rrep(j,i){
+            dp[i][j]=dp[i-1][j-1]+X[i]+Y[j];
+        }
+    }
+    print(*max_element(all(dp[N])));
 }

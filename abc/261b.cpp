@@ -80,5 +80,14 @@ template <typename T> inline bool chmax(T& a, const T& b) {bool compare = a < b;
 const ll MOD=1000000007;
 
 int main(){
-   
+   int N; cin>>N;
+   vector<string> v(N);
+   for (int i = 0; i < N; i++) cin >> v[i];
+   rep(i,N)reps(j,i+1,N){
+    if((v[i][j]=='W'&&v[j][i]!='L')||(v[i][j]=='L'&&v[j][i]!='W')||(v[i][j]=='D'&&v[j][i]!='D')){
+        print("incorrect");
+        return 0;
+    }
+   }
+   print("correct");
 }
