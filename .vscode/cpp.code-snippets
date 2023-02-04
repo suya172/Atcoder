@@ -86,7 +86,7 @@
 		"",
 		"int main(){",
 		"   ",
-		"}",
+		"}"
 	],
 	"description": ""
 	},
@@ -101,35 +101,35 @@
 	},
 	"inputint": {
 		"body": [
-			"int ${1:N}; cin>>$1;",
+			"int ${1:N}; cin>>$1;"
 		],
 		"description": "inputint",
 		"prefix": "iint"
 	},
 	"inputtwoint": {
 		"body": [
-			"int ${1:N},${2:M}; cin>>$1>>$2;",
+			"int ${1:N},${2:M}; cin>>$1>>$2;"
 		],
 		"description": "inputtwoint",
 		"prefix": "iints"
 	},
 	"inputstring": {
 		"body": [
-			"string ${1:S}; cin>>$1;",
+			"string ${1:S}; cin>>$1;"
 		],
 		"description": "inputstring",
 		"prefix": "istr"
 	},
 	"inputll": {
 		"body": [
-			"ll ${1:N}; cin>>$1;",
+			"ll ${1:N}; cin>>$1;"
 		],
 		"description": "inputll",
 		"prefix": "ill"
 	},
 	"inputtwoll": {
 		"body": [
-			"ll ${1:N},${2:M}; cin>>$1>>$2;",
+			"ll ${1:N},${2:M}; cin>>$1>>$2;"
 		],
 		"description": "inputtwoll",
 		"prefix": "ills"
@@ -195,7 +195,7 @@
 			"   ll size(ll x) {",
 			"        return siz[root(x)];",
 			"    }",
-			"}",
+			"}"
 		],
 		"description": "UnionFind木"
 	},
@@ -241,7 +241,7 @@
 			"            return min(vl, vr);",
 			"        }",
 			"    }",
-			"};",
+			"};"
 		],
 		"description": "区間内の最小値を求める"
 	},
@@ -255,7 +255,7 @@
 			"  t3 = f(p3, p4, p1);",
 			"  t4 = f(p3, p4, p2);",
 			"  return t1*t2 < 0.0 && t3*t4 < 0.0;",
-			"}",
+			"}"
 		],
 		"description": "二点を結ぶ線分同士が交わるかどうか"
 	},
@@ -278,7 +278,7 @@
 			"    // 定義通りに計算",
 			"    return (x / (yz)) % MOD;",
 			"}",
-			"",
+			""
 		],
 		"description": "重複なし組み合わせ"
 	},
@@ -366,7 +366,7 @@
 			"",
 			"template< typename T >",
 			"using MinimumSum = PrioritySumStructure< T, less< T >, greater< T > >;",
-			"",
+			""
 		],
 		"description": "スライド区間内の小さい・大きい順にK個の和"
 	},
@@ -391,7 +391,7 @@
 			"",
 			"    // 素数である",
 			"    return true;",
-			"}",
+			"}"
 		],
 		"description": "素数判定"
 	},
@@ -404,8 +404,8 @@
 			"      res=res*x%MOD;",
 			"    }",
 			"    return res;",
-			"}",
+			"}"
 		],
 		"description": ""
-	},
+	}
 }
