@@ -38,6 +38,7 @@ using uss = unordered_set<string>;
 #define rall(v) v.rbegin(),v.rend()
 #define UNIQUE(v) v.erase( unique(v.begin(), v.end()), v.end() );
 #define itn int
+#define stirng string
 
 /* REP macro */
 #define reps(i, a, n) for (ll i = (a); i < (ll)(n); ++i)
@@ -78,8 +79,36 @@ template <typename T> inline bool chmin(T& a, const T& b) {bool compare = a > b;
 template <typename T> inline bool chmax(T& a, const T& b) {bool compare = a < b; if (a < b) a = b; return compare;}
 
 const ll MOD=1000000007;
-
+struct data{
+    ll X;
+    ll L;
+};
+bool operator<(data l, data r) {
+  if (l.L != r.L) {
+    return l.L < r.L;
+  } else {
+    return l.X < r.X;
+  }
+}
+bool operator> (data l, data r) { return r < l; }
+bool operator<=(data l, data r) { return !(r < l); }
+bool operator>=(data l, data r) { return !(l < r); }
 int main(){
-    print("Hello World");
-    
+    ll N; cin>>N;
+    vector<data> Data(N);
+    rep(i,N) cin>>Data[i].X;
+    rep(i,N) cin>>Data[i].L;
+    sort(all(Data));
+    // for(const auto d:Data) cout<<d.X<<" "<<d.L<<"\n";
+    ll hoge=0;
+    ll L=Data[0].L;
+    rep(i,N){
+        hoge+=Data[i].X;
+        if(hoge>L){
+            print(i+1);
+            return 0;
+        }
+    }
+    print(N);
+    return 0;
 }
