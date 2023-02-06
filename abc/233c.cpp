@@ -81,25 +81,25 @@ inline void dprint(const double& d,ll n = 10){cout << fixed << setprecision(n) <
 // 第一引数と第二引数を比較し、第一引数(a)をより大きい/小さい値に上書き
 template <typename T> inline bool chmin(T& a, const T& b) {bool compare = a > b; if (a > b) a = b; return compare;}
 template <typename T> inline bool chmax(T& a, const T& b) {bool compare = a < b; if (a < b) a = b; return compare;}
-
+void dfs(ll& ans,ll itr,ll hoge,vvll& L,ll& X){
+    if(itr==L.siz){
+        if(hoge==X) ans++;
+        return;
+    }
+    for(const ll& i:L[itr]){
+        if(X>=hoge*i) dfs(ans,itr+1,hoge*i,L,X);
+    }
+}
 int main(){
-    int N=in_int();
-    double Ts=0,ans=0;
-    vector<double> A(N),B(N),T(N);
-    rep(i,N){
-        cin>>A[i]>>B[i];
-        T[i]=A[i]/B[i];
-        Ts+=T[i];
+   ll N=in_ll(),X=in_ll(),ans=0;
+   vvll L(N);
+   rep(i,N){
+    ll l=in_ll();
+    rep(j,l){
+        ll a=in_ll();
+        if(X%a==0) L[i].pb(a);
     }
-    Ts/=2;
-    rep(i,N){
-        if(Ts<=T[i]){
-            ans+=Ts*B[i];
-            break;
-        }else{
-            Ts-=T[i];
-            ans+=A[i];
-        }
-    }
-    cout<<fixed<<setprecision(15)<<ans<<'\n';
+   }
+   dfs(ans,0,1,L,X);
+   print(ans);
 }

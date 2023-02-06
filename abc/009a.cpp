@@ -84,22 +84,5 @@ template <typename T> inline bool chmax(T& a, const T& b) {bool compare = a < b;
 
 int main(){
     int N=in_int();
-    double Ts=0,ans=0;
-    vector<double> A(N),B(N),T(N);
-    rep(i,N){
-        cin>>A[i]>>B[i];
-        T[i]=A[i]/B[i];
-        Ts+=T[i];
-    }
-    Ts/=2;
-    rep(i,N){
-        if(Ts<=T[i]){
-            ans+=Ts*B[i];
-            break;
-        }else{
-            Ts-=T[i];
-            ans+=A[i];
-        }
-    }
-    cout<<fixed<<setprecision(15)<<ans<<'\n';
+    print(N/2+N%2);
 }

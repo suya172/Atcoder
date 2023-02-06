@@ -83,23 +83,11 @@ template <typename T> inline bool chmin(T& a, const T& b) {bool compare = a > b;
 template <typename T> inline bool chmax(T& a, const T& b) {bool compare = a < b; if (a < b) a = b; return compare;}
 
 int main(){
-    int N=in_int();
-    double Ts=0,ans=0;
-    vector<double> A(N),B(N),T(N);
+    int N; cin>>N;
+    set<pair<string,string>> S;
     rep(i,N){
-        cin>>A[i]>>B[i];
-        T[i]=A[i]/B[i];
-        Ts+=T[i];
+        string a,b; cin>>a>>b;
+        S.insert(mp(a,b));
     }
-    Ts/=2;
-    rep(i,N){
-        if(Ts<=T[i]){
-            ans+=Ts*B[i];
-            break;
-        }else{
-            Ts-=T[i];
-            ans+=A[i];
-        }
-    }
-    cout<<fixed<<setprecision(15)<<ans<<'\n';
+    YesNo(N!=S.size());
 }
