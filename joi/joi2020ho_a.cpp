@@ -83,7 +83,5 @@ template <typename T> inline bool chmin(T& a, const T& b) {bool compare = a > b;
 template <typename T> inline bool chmax(T& a, const T& b) {bool compare = a < b; if (a < b) a = b; return compare;}
 
 int main(){
-    ll N=in_ll(),K=in_ll();
-    string S=in_str();
     
 }
