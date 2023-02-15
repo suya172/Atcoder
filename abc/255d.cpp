@@ -74,15 +74,23 @@ template <typename T> inline bool chmin(T& a, const T& b) {bool compare = a > b;
 template <typename T> inline bool chmax(T& a, const T& b) {bool compare = a < b; if (a < b) a = b; return compare;}
 
 int main() {
-    ll n,q; cin>>n>>q;
-    vector<ll> a(n);
+    ll n,q,hoge=0; cin>>n>>q;
+    vector<ll> A,a(n);
     rep(i,n) cin>>a[i];
+    sort(all(a));
+    rep(i,n){
+        hoge+=a[i];
+        A.pb(hoge);
+    }
     rep(i,q){
-        ll x; cin>>x;
-        ll num=0;
-        for(const ll& i:a){
-            num+=abs(x-i);
+        ll x,ans; cin>>x;
+        auto itr=lower_bound(all(a),x);
+        if(itr==a.begin()) ans=A[n-1]-x*n;
+        else{
+            int pos=itr-a.begin();
+            ans=(A[n-1]-A[pos-1])-x*(n-pos)+x*(pos)-(A[pos-1]);
+            // cout<<"itr:"<<pos<<"\n";
         }
-        cout<<num<<endl;
+        print(ans);
     }
 }
