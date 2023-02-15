@@ -99,21 +99,21 @@
 			""
 		],
 		"description": "inputvec",
-		"prefix": "vecin"
+		"prefix": "ivec"
 	},
 	"inputint": {
 		"body": [
 			"int ${1:N}; cin>>$1;"
 		],
 		"description": "inputint",
-		"prefix": "intin"
+		"prefix": "iint"
 	},
 	"inputtwoint": {
 		"body": [
 			"int ${1:N},${2:M}; cin>>$1>>$2;"
 		],
 		"description": "inputtwoint",
-		"prefix": "intsin"
+		"prefix": "iints"
 	},
 	"inputstring": {
 		"body": [
@@ -127,14 +127,21 @@
 			"ll ${1:N}; cin>>$1;"
 		],
 		"description": "inputll",
-		"prefix": "llin"
+		"prefix": "ill"
 	},
 	"inputtwoll": {
 		"body": [
 			"ll ${1:N},${2:M}; cin>>$1>>$2;"
 		],
 		"description": "inputtwoll",
-		"prefix": "llsin"
+		"prefix": "ills"
+	},
+	"inputdouble": {
+		"body": [
+			"double ${1:N},${2:M}; cin>>$1>>$2;"
+		],
+		"description": "inputdouble",
+		"prefix": "idouble"
 	},
 	"meguru_binary_search": {
 		"body": [
